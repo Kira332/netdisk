@@ -1,0 +1,34 @@
+CREATE TABLE `user` (
+  `id` int NOT NULL COMMENT '用户id',
+  `username` varchar(255) NOT NULL COMMENT '用户名',
+  `password` varchar(255) NOT NULL COMMENT '用户密码',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+CREATE TABLE `picture` (
+  `id` int NOT NULL COMMENT '文件id',
+  `filename` varchar(255) DEFAULT NULL COMMENT '文件名',
+  `username` varchar(255) DEFAULT NULL COMMENT '所属用户名',
+  `time` timestamp NULL DEFAULT NULL COMMENT '上传时间',
+  `foldid` int DEFAULT NULL COMMENT '所属文件夹id',
+  `isPass` tinyint(1) DEFAULT NULL COMMENT '是否审核通过',
+  `type` varchar(100) DEFAULT NULL COMMENT '文件类型',
+  `size` bigint DEFAULT NULL COMMENT '文件大小',
+  `path` varchar(255) DEFAULT NULL COMMENT '文件路径',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+CREATE TABLE `folder` (
+  `id` int NOT NULL COMMENT '文件夹id',
+  `name` varchar(255) DEFAULT NULL COMMENT '文件夹名',
+  `username` varchar(255) DEFAULT NULL COMMENT '文件夹所属用户名',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+
+CREATE TABLE `administrator` (
+  `id` int NOT NULL COMMENT '管理员id',
+  `username` varchar(255) NOT NULL COMMENT '管理员用户名',
+  `password` varchar(255) NOT NULL COMMENT '管理员密码',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
